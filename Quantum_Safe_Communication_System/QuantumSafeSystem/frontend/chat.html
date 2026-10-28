@@ -19,14 +19,6 @@
                 <h3 class="font-bold text-gray-900">Aarav</h3>
                 <p class="text-sm text-gray-600 mt-1">Session active</p>
             </div>
-            <div class="border border-gray-200 p-4 rounded cursor-pointer hover:bg-gray-50 transition">
-                <h3 class="font-bold text-gray-900">Meera</h3>
-                <p class="text-sm text-gray-500 mt-1">No session yet</p>
-            </div>
-            <div class="border border-gray-200 p-4 rounded cursor-pointer hover:bg-gray-50 transition">
-                <h3 class="font-bold text-gray-900">Rohan</h3>
-                <p class="text-sm text-gray-500 mt-1">No session yet</p>
-            </div>
         </div>
     </div>
 
@@ -43,30 +35,16 @@
         </div>
 
         <!-- Messages Area -->
-        <div class="flex-1 overflow-y-auto p-8 space-y-6 flex flex-col">
-            <div class="self-start max-w-md">
-                <div class="bg-white border border-gray-200 rounded p-4 shadow-sm">
-                    <p class="text-gray-800">Did the key exchange finish on your side?</p>
-                </div>
-                <p class="text-xs text-gray-500 mt-2 px-1">10:42</p>
-            </div>
-            <div class="self-end max-w-md">
-                <div class="btn-green text-white rounded p-4 shadow-sm">
-                    <p>Yes, decapsulation matched. Sending the first message now.</p>
-                </div>
-                <p class="text-xs text-gray-500 mt-2 px-1 text-right">10:43 · Delivered</p>
-            </div>
-            <div class="self-start max-w-md">
-                <div class="bg-white border border-gray-200 rounded p-4 shadow-sm">
-                    <p class="text-gray-800">Received. Integrity check passed.</p>
-                </div>
-                <p class="text-xs text-gray-500 mt-2 px-1">10:43</p>
-            </div>
+        <div class="flex-1 overflow-y-auto p-8 space-y-6 flex flex-col" id="chatContainer">
+            <!-- Messages yahan dynamically aayenge -->
         </div>
 
-        <!-- Input Area -->
+        <!-- Input Area (Yahan File Input add kiya hai) -->
         <div class="bg-white px-6 py-5 border-t border-gray-200">
-            <form id="chatForm" class="flex gap-4">
+            <form id="chatForm" class="flex gap-4 items-center">
+                <!-- File Input -->
+                <input type="file" id="fileInput" class="text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded file:border-0 file:text-sm file:font-semibold file:bg-green-50 file:text-[#2c5e43] hover:file:bg-green-100">
+                
                 <input type="text" id="messageInput" placeholder="Type a message" class="flex-1 px-4 py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-[#2c5e43]">
                 <button type="submit" class="btn-green text-white px-8 py-3 rounded font-semibold hover:opacity-90 transition">Send</button>
             </form>
@@ -74,6 +52,9 @@
 
     </div>
 
+    <!-- Scripts -->
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="cryptoBundle.js"></script>
     <script src="app.js"></script>
 </body>
 </html>
