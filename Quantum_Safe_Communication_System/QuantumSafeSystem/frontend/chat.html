@@ -5,34 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QuantumSafeSystem - Chat</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        .bg-cream { background-color: #f4f3ea; }
-        .bg-green-custom { background-color: #2c5e43; }
-        .text-green-custom { color: #2c5e43; }
-        .bg-active-contact { background-color: #e8ede6; }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body class="flex h-screen w-full font-sans text-gray-900">
+<body class="flex h-screen w-full text-gray-900">
 
-    <!-- Sidebar: Contacts -->
+    <!-- Sidebar -->
     <div class="w-1/4 border-r border-gray-200 flex flex-col bg-white">
         <div class="p-6">
             <h2 class="text-xl font-bold">Contacts</h2>
         </div>
-        
         <div class="flex-1 overflow-y-auto px-4 space-y-3">
-            <!-- Active Contact -->
             <div class="border border-green-800 bg-active-contact p-4 rounded cursor-pointer">
                 <h3 class="font-bold text-gray-900">Aarav</h3>
                 <p class="text-sm text-gray-600 mt-1">Session active</p>
             </div>
-            
-            <!-- Inactive Contacts -->
             <div class="border border-gray-200 p-4 rounded cursor-pointer hover:bg-gray-50 transition">
                 <h3 class="font-bold text-gray-900">Meera</h3>
                 <p class="text-sm text-gray-500 mt-1">No session yet</p>
             </div>
-            
             <div class="border border-gray-200 p-4 rounded cursor-pointer hover:bg-gray-50 transition">
                 <h3 class="font-bold text-gray-900">Rohan</h3>
                 <p class="text-sm text-gray-500 mt-1">No session yet</p>
@@ -43,7 +33,7 @@
     <!-- Main Chat Area -->
     <div class="w-3/4 flex flex-col bg-cream">
         
-        <!-- Chat Header -->
+        <!-- Header -->
         <div class="bg-white px-8 py-5 border-b border-gray-200 flex justify-between items-center">
             <div>
                 <h2 class="text-xl font-bold">Aarav</h2>
@@ -54,42 +44,36 @@
 
         <!-- Messages Area -->
         <div class="flex-1 overflow-y-auto p-8 space-y-6 flex flex-col">
-            
-            <!-- Incoming Message -->
             <div class="self-start max-w-md">
                 <div class="bg-white border border-gray-200 rounded p-4 shadow-sm">
                     <p class="text-gray-800">Did the key exchange finish on your side?</p>
                 </div>
                 <p class="text-xs text-gray-500 mt-2 px-1">10:42</p>
             </div>
-
-            <!-- Outgoing Message -->
             <div class="self-end max-w-md">
-                <div class="bg-green-custom text-white rounded p-4 shadow-sm">
+                <div class="btn-green text-white rounded p-4 shadow-sm">
                     <p>Yes, decapsulation matched. Sending the first message now.</p>
                 </div>
                 <p class="text-xs text-gray-500 mt-2 px-1 text-right">10:43 · Delivered</p>
             </div>
-
-            <!-- Incoming Message -->
             <div class="self-start max-w-md">
                 <div class="bg-white border border-gray-200 rounded p-4 shadow-sm">
                     <p class="text-gray-800">Received. Integrity check passed.</p>
                 </div>
                 <p class="text-xs text-gray-500 mt-2 px-1">10:43</p>
             </div>
-
         </div>
 
         <!-- Input Area -->
         <div class="bg-white px-6 py-5 border-t border-gray-200">
-            <form class="flex gap-4" onsubmit="event.preventDefault();">
-                <input type="text" placeholder="Type a message" class="flex-1 px-4 py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-[#2c5e43]">
-                <button type="submit" class="bg-green-custom text-white px-8 py-3 rounded font-semibold hover:opacity-90 transition">Send</button>
+            <form id="chatForm" class="flex gap-4">
+                <input type="text" id="messageInput" placeholder="Type a message" class="flex-1 px-4 py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-[#2c5e43]">
+                <button type="submit" class="btn-green text-white px-8 py-3 rounded font-semibold hover:opacity-90 transition">Send</button>
             </form>
         </div>
 
     </div>
 
+    <script src="app.js"></script>
 </body>
 </html>

@@ -1,0 +1,20 @@
+/* style.css */
+:root {
+    --color-cream: #f4f3ea;
+    --color-dark: #1c1c1a;
+    --color-green: #2c5e43;
+    --color-green-active: #e8ede6;
+    --color-red: #b94a3e;
+}
+
+body {
+    font-family: sans-serif;
+}
+
+/* Custom Utility Classes */
+.bg-cream { background-color: var(--color-cream); }
+.bg-dark { background-color: var(--color-dark); }
+.btn-green { background-color: var(--color-green); }
+.text-green-custom { color: var(--color-green); }
+.text-red-custom { color: var(--color-red); }
+.bg-active-contact { background-color: var(--color-green-active); }
